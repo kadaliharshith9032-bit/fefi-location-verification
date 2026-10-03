@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FEFI MOTOCORP | Interview Location Verification</title>
+<style>
+:root{--navy:#102d4d;--blue:#1976d2;--green:#0b7a43;--light:#f4f8fc;--border:#d8e2ec;--text:#14243a;--muted:#617286}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(135deg,#eef5fb,#f8fbff);color:var(--text)}
+.header{background:linear-gradient(115deg,#0b2947,#174a78);color:#fff;padding:26px 7%;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.brand{font-weight:900;font-size:34px;letter-spacing:2px}.brand span{display:block;font-size:12px;letter-spacing:1.5px;font-weight:600;margin-top:2px}
+.header-right{font-size:12px;line-height:1.8;text-transform:uppercase;letter-spacing:1.2px;text-align:right;opacity:.9}
+.container{max-width:1180px;margin:32px auto;padding:0 18px}.card{background:#fff;border:1px solid var(--border);border-radius:20px;box-shadow:0 14px 40px rgba(16,45,77,.09);overflow:hidden}
+.hero{padding:30px 36px 22px;border-bottom:1px solid #e7eef5}.hero h1{margin:0 0 8px;font-size:32px}.hero p{margin:0;color:var(--muted);font-size:16px}
+.notice{margin:22px 36px;padding:16px 18px;background:#eef6ff;border-radius:12px;border:1px solid #d8e9fb}.notice strong{display:block;margin-bottom:5px}.notice small{color:#52677d}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:0 36px 28px}.panel{border:1px solid var(--border);border-radius:15px;padding:22px}.panel h2{font-size:18px;margin:0 0 18px}
+label{display:block;font-weight:700;font-size:14px;margin:15px 0 7px}input,select{width:100%;padding:13px 14px;border:1px solid #cbd7e3;border-radius:9px;font-size:15px;outline:none;background:#fff}input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(25,118,210,.1)}
+.consent{display:flex;gap:9px;align-items:flex-start;font-weight:500;font-size:13px;line-height:1.45;margin-top:16px}.consent input{width:auto;margin-top:3px}
+button{border:0;border-radius:10px;padding:14px 18px;font-size:16px;font-weight:800;cursor:pointer}.verify{width:100%;background:var(--green);color:#fff;margin-top:16px}.verify:disabled{opacity:.6;cursor:not-allowed}
+.status{margin-top:14px;padding:12px;border-radius:9px;display:none;font-size:14px}.status.info{display:block;background:#eef6ff;color:#24537d}.status.error{display:block;background:#fff0f0;color:#a32929}.status.success{display:block;background:#ecf9f1;color:#146b3e}
+.mapbox{height:220px;border-radius:12px;background:#edf3f7;display:flex;align-items:center;justify-content:center;color:#627589;text-align:center;padding:20px;margin-bottom:15px}
+.result{display:none;margin:0 36px 28px;border:1px solid #83d0a7;border-radius:14px;background:#f2fbf6;padding:18px}.result h3{margin:0 0 12px;color:#0b7040}.details{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 30px;font-size:14px}.details b{color:#3c5065}
+.actions{text-align:center;padding:0 36px 30px}.proceed{background:var(--blue);color:#fff;min-width:320px}.proceed:disabled{background:#aebdca;cursor:not-allowed}
+.steps{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--border);padding:22px 36px 26px}.step{flex:1;text-align:center;color:#637589;font-size:13px}.circle{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#d9e1e9;font-weight:800;margin-bottom:7px}.step.active{color:#126d43}.step.active .circle{background:#15925a;color:#fff}
+footer{text-align:center;color:#708196;font-size:12px;padding:20px}
+@media(max-width:800px){.header{padding:22px}.header-right{display:none}.grid{grid-template-columns:1fr;padding:0 20px 20px}.hero{padding:25px 20px}.notice{margin:18px 20px}.result{margin:0 20px 20px}.actions{padding:0 20px 25px}.steps{padding:20px;flex-wrap:wrap}.details{grid-template-columns:1fr}.hero h1{font-size:25px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div><div class="brand">FEFI</div><span>MOTOCORP PRIVATE LIMITED</span></div>
+  <div class="header-right">Electric Vehicles &nbsp;|&nbsp; Drone Technology<br>R&amp;D &nbsp;|&nbsp; Technical Training &nbsp;|&nbsp; Innovation</div>
+</header>
+
+<main class="container">
+<div class="card">
+<section class="hero">
+  <h1>Interview Location Verification</h1>
+  <p>Verify your current location before proceeding to the FEFI certification interview.</p>
+</section>
+
+<div class="notice">
+  <strong>Location permission is required for verification.</strong>
+  <small>Your browser will ask for permission to share your current device location. The information is used only for assessment and verification purposes. Location is collected once when you click “Verify My Location”; it is not continuously tracked.</small>
+</div>
+
+<div class="grid">
+  <section class="panel">
+    <h2>Employee Details</h2>
+    <label for="empId">Employee ID *</label>
+    <input id="empId" placeholder="e.g. FEFI-024" autocomplete="off">
+    <label for="name">Full Name *</label>
+    <input id="name" placeholder="Enter your full name" autocomplete="name">
+    <label for="dept">Department / Role *</label>
+    <select id="dept">
+      <option value="">Select your department</option>
+      <option>Technical & Training</option><option>R&D</option>
+      <option>Marketing & Business Development</option><option>Operations</option>
+      <option>Trainee Engineer</option><option>Other</option>
+    </select>
+    <label class="consent"><input type="checkbox" id="consent"> <span>I understand that FEFI MOTOCORP will collect my current device location once for interview/assessment verification and use it for that stated purpose.</span></label>
+  </section>
+
+  <section class="panel">
+    <h2>Verify Your Location</h2>
+    <div class="mapbox" id="mapbox">Your verified coordinates will appear here.<br><br>No location is requested until you click the verification button.</div>
+    <button class="verify" id="verifyBtn">📍 Verify My Location</button>
+    <div class="status" id="status"></div>
+  </section>
+</div>
+
+<section class="result" id="result">
+  <h3>✓ Location Verified Successfully</h3>
+  <div class="details">
+    <div><b>Employee ID:</b> <span id="rEmp"></span></div>
+    <div><b>Verified at:</b> <span id="rTime"></span></div>
+    <div><b>Name:</b> <span id="rName"></span></div>
+    <div><b>Department:</b> <span id="rDept"></span></div>
+    <div><b>Latitude:</b> <span id="rLat"></span></div>
+    <div><b>Longitude:</b> <span id="rLng"></span></div>
+    <div><b>Accuracy:</b> <span id="rAcc"></span></div>
+    <div><b>Map:</b> <a id="mapLink" target="_blank" rel="noopener">Open verified location</a></div>
+  </div>
+</section>
+
+<div class="actions">
+  <button class="proceed" id="proceedBtn" disabled>→ Proceed to Interview</button>
+  <div style="font-size:12px;color:#73859a;margin-top:8px">Available after successful location verification.</div>
+</div>
+
+<div class="steps">
+  <div class="step active"><div class="circle">1</div><br>Verify Location</div>
+  <div class="step"><div class="circle">2</div><br>Confirm Details</div>
+  <div class="step"><div class="circle">3</div><br>Proceed to Interview</div>
+  <div class="step"><div class="circle">4</div><br>Complete Interview</div>
+</div>
+</div>
+</main>
+
+<footer>© 2026 FEFI MOTOCORP PRIVATE LIMITED &nbsp;|&nbsp; Location Verification Portal &nbsp;|&nbsp; For Assessment and Verification Purposes Only</footer>
+
+<!-- Hidden target for cross-origin form submission to Google Apps Script -->
+<iframe name="logFrame" id="logFrame" style="display:none"></iframe>
+
+<script>
+// ================= CONFIGURATION =================
+const INTERVIEW_URL = "https://forms.cloud.microsoft/r/YBRWAiPgTS";
+
+// Paste the Google Apps Script Web App /exec URL here after deployment.
+const LOG_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+// ==================================================
+
+const $ = id => document.getElementById(id);
+let verified = null;
+
+function showStatus(msg, type){
+  $("status").className = "status " + type;
+  $("status").textContent = msg;
+}
+
+function submitLocationToSheet(data){
+  if(!LOG_ENDPOINT || LOG_ENDPOINT.includes("PASTE_YOUR_")){
+    return false;
+  }
+
+  const form = document.createElement("form");
+  form.method = "POST";
+  form.action = LOG_ENDPOINT;
+  form.target = "logFrame";
+  form.style.display = "none";
+
+  const fields = {
+    employee_id: data.empId,
+    full_name: data.name,
+    department: data.dept,
+    latitude: data.lat,
+    longitude: data.lng,
+    accuracy: data.accuracy,
+    timestamp: data.time,
+    user_agent: navigator.userAgent
+  };
+
+  Object.entries(fields).forEach(([key,value])=>{
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = key;
+    input.value = value;
+    form.appendChild(input);
+  });
+
+  document.body.appendChild(form);
+  form.submit();
+  setTimeout(()=>form.remove(),1500);
+  return true;
+}
+
+$("verifyBtn").addEventListener("click", () => {
+  const empId = $("empId").value.trim();
+  const name = $("name").value.trim();
+  const dept = $("dept").value;
+
+  if(!empId || !name || !dept){
+    showStatus("Please complete Employee ID, Full Name and Department before verifying your location.", "error");
+    return;
+  }
+  if(!$("consent").checked){
+    showStatus("Please confirm the location-use acknowledgement before continuing.", "error");
+    return;
+  }
+  if(!navigator.geolocation){
+    showStatus("This browser does not support location services. Please use Chrome, Edge or Safari.", "error");
+    return;
+  }
+
+  $("verifyBtn").disabled = true;
+  $("verifyBtn").textContent = "Getting your location…";
+  showStatus("Please allow location access when your browser asks. Stay on this page until verification completes.", "info");
+
+  navigator.geolocation.getCurrentPosition(pos => {
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+    const accuracy = Math.round(pos.coords.accuracy);
+    const now = new Date();
+
+    verified = {empId,name,dept,lat,lng,accuracy,time:now.toISOString()};
+    const logged = submitLocationToSheet(verified);
+
+    $("rEmp").textContent = empId;
+    $("rName").textContent = name;
+    $("rDept").textContent = dept;
+    $("rLat").textContent = lat.toFixed(6);
+    $("rLng").textContent = lng.toFixed(6);
+    $("rAcc").textContent = "±" + accuracy + " metres";
+    $("rTime").textContent = now.toLocaleString();
+    $("mapLink").href = `https://www.google.com/maps?q=${lat},${lng}`;
+    $("mapbox").innerHTML = `<strong>Location captured</strong><br><br>Latitude ${lat.toFixed(6)}<br>Longitude ${lng.toFixed(6)}<br>Accuracy ±${accuracy} m`;
+
+    $("result").style.display = "block";
+
+    if(logged){
+      showStatus("Location verified and submitted to the FEFI verification sheet. You may now proceed.", "success");
+    }else{
+      showStatus("Location verified in your browser. Administrator: connect the Google Apps Script URL to enable central saving.", "info");
+    }
+
+    $("proceedBtn").disabled = false;
+    $("verifyBtn").textContent = "✓ Location Verified";
+  }, err => {
+    let msg = "Unable to obtain your location.";
+    if(err.code === 1) msg = "Location permission was denied. Please allow location access in your browser settings and try again.";
+    if(err.code === 2) msg = "Your location could not be determined. Check GPS/location services and try again.";
+    if(err.code === 3) msg = "Location request timed out. Please try again from a place with better GPS/network reception.";
+    showStatus(msg, "error");
+    $("verifyBtn").disabled = false;
+    $("verifyBtn").textContent = "📍 Verify My Location";
+  }, {
+    enableHighAccuracy:true,
+    timeout:20000,
+    maximumAge:0
+  });
+});
+
+$("proceedBtn").addEventListener("click", () => {
+  if(!verified) return;
+  const url = new URL(INTERVIEW_URL);
+  // Kept for reference; Microsoft Forms will only use this automatically if its
+  // own prefill mechanism is configured to accept the corresponding parameter.
+  url.searchParams.set("employee_id", verified.empId);
+  window.location.href = url.toString();
+});
+</script>
+</body>
+</html>
