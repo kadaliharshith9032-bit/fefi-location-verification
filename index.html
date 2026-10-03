@@ -251,6 +251,26 @@ verifyBtn.addEventListener("click", function () {
             const lat = position.coords.latitude;
             const lng = position.coords.longitude;
             const accuracy = position.coords.accuracy;
+                        // Send location details to Google Sheet
+            const scriptURL =
+                "https://script.google.com/macros/s/AKfycbz2AWYuGk6zfBmDZEJI5sFHhQi7MaOr2_iQRQYu9D8frPUuHNnBTmCzjlODOAfFMhbI1w/exec";
+
+            const data = new URLSearchParams();
+
+            data.append("employeeId", employeeId);
+            data.append("name", fullName);
+            data.append("department", department);
+            data.append("latitude", lat);
+            data.append("longitude", lng);
+            data.append("accuracy", accuracy);
+
+            fetch(scriptURL, {
+                method: "POST",
+                mode: "no-cors",
+                body: data
+            }).catch(function(error) {
+                console.error("Could not record location:", error);
+            });
 
             document.getElementById("showEmployee").textContent =
                 employeeId;
